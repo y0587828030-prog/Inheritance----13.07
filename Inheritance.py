@@ -295,3 +295,18 @@ a.sponsor_info()
 
 #5- It makes it difficult to test changes that are done
 #  in a single test remains
+
+#step 1. Same Logger Object
+class Logger:
+    _instance = None  
+
+    def __new__(cls):  
+        if cls._instance is None:  
+            cls._instance = super().__new__(cls)  
+        return cls._instance  
+
+
+logger1 = Logger()  
+logger2 = Logger()  
+
+print(logger1 is logger2)  
