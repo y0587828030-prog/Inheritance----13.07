@@ -7,15 +7,15 @@ class Athlete:
     def introduce(self):
         print(f"{self.name} is {self.age} years old and is an athlete")
 
-a = Athlete("yehosh", 26)
-a.introduce()
+athlete = Athlete("yehosh", 26)
+athlete.introduce()
 
 class Swimmer(Athlete):
     def __init__(self,name, age):
         super().__init__(name, age)
 
-b = Swimmer("tom", 22)
-b.introduce()
+swimming = Swimmer("tom", 22)
+swimming.introduce()
 
 
 ## step 2 
@@ -27,15 +27,15 @@ class Athlete:
 
     def describe(self):
         print(f"{self.name} competes in {self.sport}")
-a=Athlete("bob", 25, "Dance")
-a.describe()
+athlete=Athlete("bob", 25, "Dance")
+athlete.describe()
 
 class Runner(Athlete):
     def __init__(self, name, age):
         super().__init__(name, age, "Running")
 
-b=Runner("sara", 25)
-b.describe()
+Ratzen=Runner("sara", 25)
+Ratzen.describe()
 
 
 ##step 3
@@ -47,8 +47,8 @@ class Athlete:
     def introduce(self):
         print(f"{self.name} is {self.age} years old and is an athlete")
 
-a = Athlete("yehosh", 26)
-a.introduce()
+athlete = Athlete("yehosh", 26)
+athlete.introduce()
 
 class Cyclist(Athlete):
     def __init__(self, name, age,bike_brand ):
@@ -60,9 +60,41 @@ class Cyclist(Athlete):
     def describe_gear(self):
              print(f"Cyclist {self.name} rides a {self.bike}.")
 
-b= Cyclist("Mike", 30, "Trek")
-b.introduce()
-b.describe_gear()
-         
+riding= Cyclist("Mike", 30, "Trek")
+riding.introduce()
+riding.describe_gear()
+
+##step 4
+class Athlete:
+    def __init__(self, name, country):
+        self.name = name
+        self.country = country
+
+    def greet(self):
+        print(f"{self.name} represents {self.country}")
+
+class Swimmer(Athlete):
+    def __init__(self, name, country,stroke_style):
+        super().__init__(name, country)
+        self.stroke = stroke_style
+
+class Runner(Athlete):
+    def __init__(self, name, country, best_distance):
+        super().__init__(name, country)
+        self.best = best_distance
+
+class Cyclist(Athlete):
+    def __init__(self, name, country, race_type):
+        super().__init__(name, country)
+        self.race = race_type
+
+swimming = Swimmer("Lior", "Israel", "freestyle")
+running = Runner("Avi", "Kenya", "marathon")
+riding = Cyclist("Jan", "France", "road")
+swimming.greet()
+running.greet()
+riding.greet()
+
+                
 
         
