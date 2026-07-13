@@ -95,40 +95,58 @@
 # running.greet()
 # riding.greet()
 
-## step 5  Shared Warm-Up Method
+# ## step 5  Shared Warm-Up Method
+# class Athlete:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def warm_up(self):
+#         print(f"{self.name} is warming up.")
+
+# class Gymnast(Athlete):
+#     def __init__(self, name, age, apparatus):
+#         super().__init__(name, age)
+#         self.apparatus = apparatus
+
+#     def compete(self):
+#         print(f"hi {self.name} good look in {self.apparatus}")
+
+# class Swimmer(Athlete):
+#     def __init__(self, name, age, stroke):
+#         super().__init__(name, age,)
+#         self.stroke = stroke 
+
+#     def compete(self):
+#         print(f"hi {self.name} good look in {self.stroke}")
+
+# gym = Gymnast("Ana", 19, "rings")
+# swiming = Swimmer("Ben", 21, "butterfly")
+
+# gym.warm_up()
+# swiming.warm_up()
+
+# gym.compete()
+# swiming.compete()
+
+##step 6. Constructor Chaining
 class Athlete:
-    def __init__(self, name, age):
+    def __init__(self, name, age,years_active):
         self.name = name
         self.age = age
+        self.years_active = years_active
 
-    def warm_up(self):
-        print(f"{self.name} is warming up.")
+    def experience(self):
+        print(f"{self.name} has been active for {self.years_active} years.")
+         
+class TeamSportPlayer(Athlete):
+    def __init__(self, name, age, years_active, team_name):
+        super().__init__(name, age, years_active)
+        self.team = team_name
 
-class Gymnast(Athlete):
-    def __init__(self, name, age, apparatus):
-        super().__init__(name, age)
-        self.apparatus = apparatus
+    def team_info(self):
+        print(f"{self.name} plays for {self.team}.")
 
-    def compete(self):
-        print(f"hi {self.name} good look in {self.apparatus}")
-
-class Swimmer(Athlete):
-    def __init__(self, name, age, stroke):
-        super().__init__(name, age,)
-        self.stroke = stroke 
-
-    def compete(self):
-        print(f"hi {self.name} good look in {self.stroke}")
-
-gym = Gymnast("Ana", 19, "rings")
-swiming = Swimmer("Ben", 21, "butterfly")
-
-gym.warm_up()
-swiming.warm_up()
-
-gym.compete()
-swiming.compete()
-
-                      
-
-        
+player = TeamSportPlayer("Shua", 28, 10, "biter")
+player.experience()
+player.team_info()
