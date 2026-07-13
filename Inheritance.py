@@ -281,3 +281,10 @@ a = ProfessionalAthlete("Ronaldo", 39, "football", "Nike")
 a.greet()
 a.train()
 a.sponsor_info()
+
+##self larn
+#1- Prevents collisions .
+
+#2 - So that the entire system always sees 
+# the same updated information, without copies
+
