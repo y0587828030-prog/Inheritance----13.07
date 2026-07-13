@@ -288,3 +288,10 @@ a.sponsor_info()
 #2 - So that the entire system always sees 
 # the same updated information, without copies
 
+#3- Any code from anywhere can access this object.
+
+#4- With the help of a __new__ function that checks: 
+# "If we have already created the object in the past
+
+#5- It makes it difficult to test changes that are done
+#  in a single test remains
