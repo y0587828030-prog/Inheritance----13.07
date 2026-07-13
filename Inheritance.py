@@ -1,182 +1,182 @@
-# #step 1 Swimmer Inherits from Athlete
-# class Athlete:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
+#step 1 Swimmer Inherits from Athlete
+class Athlete:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-#     def introduce(self):
-#         print(f"{self.name} is {self.age} years old and is an athlete")
+    def introduce(self):
+        print(f"{self.name} is {self.age} years old and is an athlete")
 
-# athlete = Athlete("yehosh", 26)
-# athlete.introduce()
+athlete = Athlete("yehosh", 26)
+athlete.introduce()
 
-# class Swimmer(Athlete):
-#     def __init__(self,name, age):
-#         super().__init__(name, age)
+class Swimmer(Athlete):
+    def __init__(self,name, age):
+        super().__init__(name, age)
 
-# swimming = Swimmer("tom", 22)
-# swimming.introduce()
-
-
-# ## step 2 
-# class Athlete:
-#     def __init__(self, name, age,sport):
-#         self.name = name 
-#         self.age = age
-#         self.sport = sport
-
-#     def describe(self):
-#         print(f"{self.name} competes in {self.sport}")
-# athlete=Athlete("bob", 25, "Dance")
-# athlete.describe()
-
-# class Runner(Athlete):
-#     def __init__(self, name, age):
-#         super().__init__(name, age, "Running")
-
-# Ratzen=Runner("sara", 25)
-# Ratzen.describe()
+swimming = Swimmer("tom", 22)
+swimming.introduce()
 
 
-# ##step 3
-# class Athlete:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
+## step 2 
+class Athlete:
+    def __init__(self, name, age,sport):
+        self.name = name 
+        self.age = age
+        self.sport = sport
 
-#     def introduce(self):
-#         print(f"{self.name} is {self.age} years old and is an athlete")
+    def describe(self):
+        print(f"{self.name} competes in {self.sport}")
+athlete=Athlete("bob", 25, "Dance")
+athlete.describe()
 
-# athlete = Athlete("yehosh", 26)
-# athlete.introduce()
+class Runner(Athlete):
+    def __init__(self, name, age):
+        super().__init__(name, age, "Running")
 
-# class Cyclist(Athlete):
-#     def __init__(self, name, age,bike_brand ):
-#         super().__init__(name, age )
-#         self.bike = bike_brand
-
+Ratzen=Runner("sara", 25)
+Ratzen.describe()
 
 
-#     def describe_gear(self):
-#              print(f"Cyclist {self.name} rides a {self.bike}.")
+##step 3
+class Athlete:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-# riding= Cyclist("Mike", 30, "Trek")
-# riding.introduce()
-# riding.describe_gear()
+    def introduce(self):
+        print(f"{self.name} is {self.age} years old and is an athlete")
 
-# ##step 4
-# class Athlete:
-#     def __init__(self, name, country):
-#         self.name = name
-#         self.country = country
+athlete = Athlete("yehosh", 26)
+athlete.introduce()
 
-#     def greet(self):
-#         print(f"{self.name} represents {self.country}")
+class Cyclist(Athlete):
+    def __init__(self, name, age,bike_brand ):
+        super().__init__(name, age )
+        self.bike = bike_brand
 
-# class Swimmer(Athlete):
-#     def __init__(self, name, country,stroke_style):
-#         super().__init__(name, country)
-#         self.stroke = stroke_style
 
-# class Runner(Athlete):
-#     def __init__(self, name, country, best_distance):
-#         super().__init__(name, country)
-#         self.best = best_distance
 
-# class Cyclist(Athlete):
-#     def __init__(self, name, country, race_type):
-#         super().__init__(name, country)
-#         self.race = race_type
+    def describe_gear(self):
+             print(f"Cyclist {self.name} rides a {self.bike}.")
 
-# swimming = Swimmer("Lior", "Israel", "freestyle")
-# running = Runner("Avi", "Kenya", "marathon")
-# riding = Cyclist("Jan", "France", "road")
-# swimming.greet()
-# running.greet()
-# riding.greet()
+riding= Cyclist("Mike", 30, "Trek")
+riding.introduce()
+riding.describe_gear()
 
-# ## step 5  Shared Warm-Up Method
-# class Athlete:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
+##step 4
+class Athlete:
+    def __init__(self, name, country):
+        self.name = name
+        self.country = country
 
-#     def warm_up(self):
-#         print(f"{self.name} is warming up.")
+    def greet(self):
+        print(f"{self.name} represents {self.country}")
 
-# class Gymnast(Athlete):
-#     def __init__(self, name, age, apparatus):
-#         super().__init__(name, age)
-#         self.apparatus = apparatus
+class Swimmer(Athlete):
+    def __init__(self, name, country,stroke_style):
+        super().__init__(name, country)
+        self.stroke = stroke_style
 
-#     def compete(self):
-#         print(f"hi {self.name} good look in {self.apparatus}")
+class Runner(Athlete):
+    def __init__(self, name, country, best_distance):
+        super().__init__(name, country)
+        self.best = best_distance
 
-# class Swimmer(Athlete):
-#     def __init__(self, name, age, stroke):
-#         super().__init__(name, age,)
-#         self.stroke = stroke 
+class Cyclist(Athlete):
+    def __init__(self, name, country, race_type):
+        super().__init__(name, country)
+        self.race = race_type
 
-#     def compete(self):
-#         print(f"hi {self.name} good look in {self.stroke}")
+swimming = Swimmer("Lior", "Israel", "freestyle")
+running = Runner("Avi", "Kenya", "marathon")
+riding = Cyclist("Jan", "France", "road")
+swimming.greet()
+running.greet()
+riding.greet()
 
-# gym = Gymnast("Ana", 19, "rings")
-# swiming = Swimmer("Ben", 21, "butterfly")
+## step 5  Shared Warm-Up Method
+class Athlete:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-# gym.warm_up()
-# swiming.warm_up()
+    def warm_up(self):
+        print(f"{self.name} is warming up.")
 
-# gym.compete()
-# swiming.compete()
+class Gymnast(Athlete):
+    def __init__(self, name, age, apparatus):
+        super().__init__(name, age)
+        self.apparatus = apparatus
 
-# ##step 6. Constructor Chaining
-# class Athlete:
-#     def __init__(self, name, age,years_active):
-#         self.name = name
-#         self.age = age
-#         self.years_active = years_active
+    def compete(self):
+        print(f"hi {self.name} good look in {self.apparatus}")
 
-#     def experience(self):
-#         print(f"{self.name} has been active for {self.years_active} years.")
+class Swimmer(Athlete):
+    def __init__(self, name, age, stroke):
+        super().__init__(name, age,)
+        self.stroke = stroke 
+
+    def compete(self):
+        print(f"hi {self.name} good look in {self.stroke}")
+
+gym = Gymnast("Ana", 19, "rings")
+swiming = Swimmer("Ben", 21, "butterfly")
+
+gym.warm_up()
+swiming.warm_up()
+
+gym.compete()
+swiming.compete()
+
+##step 6. Constructor Chaining
+class Athlete:
+    def __init__(self, name, age,years_active):
+        self.name = name
+        self.age = age
+        self.years_active = years_active
+
+    def experience(self):
+        print(f"{self.name} has been active for {self.years_active} years.")
          
-# class TeamSportPlayer(Athlete):
-#     def __init__(self, name, age, years_active, team_name):
-#         super().__init__(name, age, years_active)
-#         self.team = team_name
+class TeamSportPlayer(Athlete):
+    def __init__(self, name, age, years_active, team_name):
+        super().__init__(name, age, years_active)
+        self.team = team_name
 
-#     def team_info(self):
-#         print(f"{self.name} plays for {self.team}.")
+    def team_info(self):
+        print(f"{self.name} plays for {self.team}.")
 
-# player = TeamSportPlayer("Shua", 28, 10, "biter")
-# player.experience()
-# player.team_info()
+player = TeamSportPlayer("Shua", 28, 10, "biter")
+player.experience()
+player.team_info()
 
-# ##step 7. Personal Best Tracking
-# class Athlete:
-#     def __init__(self, name, sport):
-#         self.name = name
-#         self.sport = sport
-#         self.personal_best = None
+##step 7. Personal Best Tracking
+class Athlete:
+    def __init__(self, name, sport):
+        self.name = name
+        self.sport = sport
+        self.personal_best = None
 
-#     def set_record(self,value):
-#         self.personal_best = value
-#         print(f"new record: {value}")
+    def set_record(self,value):
+        self.personal_best = value
+        print(f"new record: {value}")
 
     
-#     def has_record(self):
-#         return self.personal_best != None 
+    def has_record(self):
+        return self.personal_best != None 
 
-# class Sprinter(Athlete):
-#     def __init__(self, name):
-#         super().__init__(name, "100m sprint")
+class Sprinter(Athlete):
+    def __init__(self, name):
+        super().__init__(name, "100m sprint")
 
-# sprint = Sprinter("Usain")
+sprint = Sprinter("Usain")
 
-# print(sprint.has_record())  
-# sprint.set_record(10.8) 
-# print(sprint.has_record())  
-# sprint.has_record()
-# print(sprint.personal_best) 
+print(sprint.has_record())  
+sprint.set_record(10.8) 
+print(sprint.has_record())  
+sprint.has_record()
+print(sprint.personal_best) 
 
 ## step 8. Training Session Counter
 class Athlete:
@@ -250,3 +250,34 @@ playir2.full_profile()
 
 playir3= BasketballPlayer("bob", 26, "guard", 8)
 playir3.full_profile()
+
+
+## step 10. Three-Level Inheritance Chain
+class person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hi, I am {self.name}.") 
+
+class Athlete(person):
+    def __init__(self, name, age, sport):
+        super().__init__(name, age)
+        self.sport = sport
+
+    def train(self):
+        print(f"{self.name} is training for {self.sport}.")
+
+class ProfessionalAthlete(Athlete):
+    def __init__(self, name, age, sport,sponsor):
+        super().__init__(name, age, sport)
+        self.sponsor = sponsor
+
+    def sponsor_info(self):
+        print(f"{self.name} is sponsored by {self.sponsor}.")
+
+a = ProfessionalAthlete("Ronaldo", 39, "football", "Nike")
+a.greet()
+a.train()
+a.sponsor_info()
