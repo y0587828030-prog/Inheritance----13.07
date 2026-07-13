@@ -151,30 +151,71 @@
 # player.experience()
 # player.team_info()
 
-##step 7. Personal Best Tracking
-class Athlete:
-    def __init__(self, name, sport):
-        self.name = name
-        self.sport = sport
-        self.personal_best = None
+# ##step 7. Personal Best Tracking
+# class Athlete:
+#     def __init__(self, name, sport):
+#         self.name = name
+#         self.sport = sport
+#         self.personal_best = None
 
-    def set_record(self,value):
-        self.personal_best = value
-        print(f"new record: {value}")
+#     def set_record(self,value):
+#         self.personal_best = value
+#         print(f"new record: {value}")
 
     
-    def has_record(self):
-        return self.personal_best != None 
+#     def has_record(self):
+#         return self.personal_best != None 
 
-class Sprinter(Athlete):
-    def __init__(self, name):
-        super().__init__(name, "100m sprint")
+# class Sprinter(Athlete):
+#     def __init__(self, name):
+#         super().__init__(name, "100m sprint")
 
-sprint = Sprinter("Usain")
+# sprint = Sprinter("Usain")
 
-print(sprint.has_record())  
-sprint.set_record(10.8) 
-print(sprint.has_record())  
-sprint.has_record()
-print(sprint.personal_best) 
-        
+# print(sprint.has_record())  
+# sprint.set_record(10.8) 
+# print(sprint.has_record())  
+# sprint.has_record()
+# print(sprint.personal_best) 
+
+## step 8. Training Session Counter
+class Athlete:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.sessions_completed = 0
+
+    def train(self):
+        self.sessions_completed += 1 
+
+    def sessions_needed(self, target):
+        need = target - self.sessions_completed
+        if need > 0:
+            return need
+        elif need == 0:
+           return "You have arrived at your destination."
+        else:
+            over = self.sessions_completed - target
+            return f"{over}- Number of extra workouts."   
+    
+
+
+class Triathlete(Athlete):
+    def __init__(self, name, age, discipline):
+        super().__init__(name, age)
+        self.discipline =discipline
+
+    def describe(self):
+        print(f"Triathlete {self.name}, age {self.age}, discipline: {self.discipline}")
+
+Trainee = Triathlete("Dan", 26, "cycling")
+Trainee.describe()        
+Trainee.train()
+Trainee.train()
+Trainee.train()
+Trainee.train()
+Trainee.train()
+
+print(Trainee.sessions_needed(10))
+
+print(f"{Trainee.sessions_completed} sessions completed. {Trainee.sessions_needed(10)} more needed.")
