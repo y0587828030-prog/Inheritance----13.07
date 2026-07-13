@@ -327,6 +327,7 @@ settings1 = AppSettings()
 settings2 = AppSettings() 
 
 settings2.theme = "light" 
+<<<<<<< HEAD
 print(settings1.theme)
 
 #step 3  Counter Singleton
@@ -351,3 +352,6 @@ counter2.increment()
 
 print(counter1.count)  
 print(counter2.count) 
+=======
+print(settings1.theme)  
+>>>>>>> 26de13da1ae1f7d371e425ddf8f5d7c3bef4f2c9
