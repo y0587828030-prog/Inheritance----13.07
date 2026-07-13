@@ -219,3 +219,34 @@ Trainee.train()
 print(Trainee.sessions_needed(10))
 
 print(f"{Trainee.sessions_completed} sessions completed. {Trainee.sessions_needed(10)} more needed.")
+
+
+## step 9. Basketball Player Card 
+class Athlete:
+    def __init__(self, name, age , position):
+        self.name = name
+        self.age = age
+        self.position = position
+
+
+    def player_card(self):
+        print(f"{self.name} | {self.age} | {self.position}")
+
+
+class BasketballPlayer(Athlete):
+    def __init__(self, name, age, position, jersey_number):
+        super().__init__(name, age, position)
+        self.jersey_number = jersey_number
+
+    def full_profile(self):
+        self.player_card()
+        print(f"Jersey: #{self.jersey_number}")
+
+playir1= BasketballPlayer("Mia", 24, "guard", 7)
+playir1.full_profile()
+
+playir2= BasketballPlayer("jon", 25, "guard", 9)
+playir2.full_profile()
+
+playir3= BasketballPlayer("bob", 26, "guard", 8)
+playir3.full_profile()
