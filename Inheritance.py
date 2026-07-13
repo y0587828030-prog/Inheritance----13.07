@@ -310,3 +310,21 @@ logger1 = Logger()
 logger2 = Logger()  
 
 print(logger1 is logger2)  
+
+
+#step 2. Shared Settings
+class AppSettings:
+    _instance = None 
+
+    def __new__(cls):  
+        if cls._instance is None: 
+            cls._instance = super().__new__(cls) 
+            cls._instance.theme = "dark" 
+        return cls._instance  
+
+
+settings1 = AppSettings()  
+settings2 = AppSettings() 
+
+settings2.theme = "light" 
+print(settings1.theme)  
