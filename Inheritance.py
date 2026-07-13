@@ -129,24 +129,52 @@
 # gym.compete()
 # swiming.compete()
 
-##step 6. Constructor Chaining
-class Athlete:
-    def __init__(self, name, age,years_active):
-        self.name = name
-        self.age = age
-        self.years_active = years_active
+# ##step 6. Constructor Chaining
+# class Athlete:
+#     def __init__(self, name, age,years_active):
+#         self.name = name
+#         self.age = age
+#         self.years_active = years_active
 
-    def experience(self):
-        print(f"{self.name} has been active for {self.years_active} years.")
+#     def experience(self):
+#         print(f"{self.name} has been active for {self.years_active} years.")
          
-class TeamSportPlayer(Athlete):
-    def __init__(self, name, age, years_active, team_name):
-        super().__init__(name, age, years_active)
-        self.team = team_name
+# class TeamSportPlayer(Athlete):
+#     def __init__(self, name, age, years_active, team_name):
+#         super().__init__(name, age, years_active)
+#         self.team = team_name
 
-    def team_info(self):
-        print(f"{self.name} plays for {self.team}.")
+#     def team_info(self):
+#         print(f"{self.name} plays for {self.team}.")
 
-player = TeamSportPlayer("Shua", 28, 10, "biter")
-player.experience()
-player.team_info()
+# player = TeamSportPlayer("Shua", 28, 10, "biter")
+# player.experience()
+# player.team_info()
+
+##step 7. Personal Best Tracking
+class Athlete:
+    def __init__(self, name, sport):
+        self.name = name
+        self.sport = sport
+        self.personal_best = None
+
+    def set_record(self,value):
+        self.personal_best = value
+        print(f"new record: {value}")
+
+    
+    def has_record(self):
+        return self.personal_best != None 
+
+class Sprinter(Athlete):
+    def __init__(self, name):
+        super().__init__(name, "100m sprint")
+
+sprint = Sprinter("Usain")
+
+print(sprint.has_record())  
+sprint.set_record(10.8) 
+print(sprint.has_record())  
+sprint.has_record()
+print(sprint.personal_best) 
+        
